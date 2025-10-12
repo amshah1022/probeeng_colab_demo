@@ -10,8 +10,8 @@
 
 ## What ProbeEng Does
 
-- **Representation extraction** from HuggingFace-compatible LLMs (e.g., Llama-2, GPT-2, Pythia).  
-- **Probe training** (e.g., LR, DIM, LDA; unsupervised PCA/CCS/LAT) across **selected layers** and **token positions**.  
+- **Representation extraction** from HuggingFace-compatible LLMs (e.g., Llama-2, GPT-2).  
+- **Probe training** (e.g., LR, DIM, LDA; unsupervised PCA/CCS/LAT) across selected layers and token positions.  
 - **Evaluation** with cross-dataset generalization, rankings, and plots.  
 - **Ensemble support** (e.g., Parallel Projection) for combining methods.  
 - **Artifact I/O** to **S3** for sharing datasets, probes, and evaluation results across runs.
@@ -29,9 +29,6 @@
 1) **Activation Extraction**: forward hooks capture hidden states at chosen layers and tokens → serialized activation dataset (pickle + metadata).  
 2) **Probe / Ensemble Training**: train per-layer probes or a learned ensemble across methods.  
 3) **Evaluation**: compute metrics (accuracy, F1, MI), same-vs-cross dataset generalization, rankings, and plots.
-
----
-
 
 ---
 
@@ -109,6 +106,9 @@ generate_rankings = true
 ```bash
 python experiments/run_pipeline.py standard alina_mvp --output-dir ./output/
 ```
+
+### Artifacts (Example S3 Layout)
+
 
 
 
