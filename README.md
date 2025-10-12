@@ -10,10 +10,10 @@
 
 ## Purpose 
 
-ProbeEng is a research framework for meta-probing — building, evaluating, and orchestrating probe networks that measure what large language models know and how reliably they express it.
+ProbeEng is a research framework for meta-probing, building, evaluating, and orchestrating probe networks that measure what large language models know and how reliably they express it.
 Instead of interpreting a single model directly, ProbeEng focuses on the infrastructure layer of interpretability:
-Designing standardized probe pipelines to train, test, and ensemble thousands of probes across layers, models, and datasets
-Developing a meta-probe system that learns to evaluate and calibrate other probes’ reliability
+- Designing standardized probe pipelines to train, test, and ensemble thousands of probes across layers, models, and datasets
+- Developing a meta-probe system that learns to evaluate and calibrate other probes’ reliability
 This transforms probing from an ad-hoc interpretability technique into a scientific instrument for reproducible model-understanding research. ProbeEng complements mechanistic interpretability by focusing on the measurement layer—quantifying how well interpretability itself works.
 
 ---
