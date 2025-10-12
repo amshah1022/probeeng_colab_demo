@@ -102,7 +102,7 @@ calculate_recovered_accuracy = true
 generate_rankings = true
 ```
 
-# Run
+### Run
 ```bash
 python experiments/run_pipeline.py standard alina_mvp --output-dir ./output/
 ```
