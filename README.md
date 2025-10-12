@@ -93,10 +93,9 @@ python experiments/run_probe_evaluation.py demo \
 │ Dataset Loader │ → │ Probe Trainer  │ → │ Evaluation + Plots │
 │  (HF datasets) │   │  (sklearn/Py)  │   │  (metrics, graphs) │
 └────────────────┘   └────────────────┘   └────────────────────┘
-
+```
 Each probe acts as a diagnostic classifier over hidden states.
 The meta-probe module (in progress) evaluates these diagnostic probes across layers, datasets, and runs to estimate interpretability reliability.
-```
 
 ## Note on Scope and Reproducibilty 
 
