@@ -99,8 +99,6 @@ Later layers (not shown here) typically achieve >0.8 accuracy and exhibit the mo
 
 ---
 
-Would you like me to convert this into a **heatmap-style table** (colored Markdown cells, e.g. via HTML inline styles) so it visually mimics your plotted chart but remains text-based?
-
 
 
 
