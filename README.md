@@ -27,17 +27,23 @@ This transforms probing from an ad-hoc interpretability technique into a scienti
 
 ---
 
-## Quick Start
+## Quick Start (Read-Only Demonstration) 
 
-> **Requirements:** Python 3.10+, CUDA GPU recommended. For gated models (e.g., `meta-llama/Llama-2-7b-chat-hf`), add a Hugging Face token with access.
+This repository is a demonstration of the ProbeEng pipeline, intended for inspection rather than execution.
+Due to its reliance on private datasets and configurations from the Cornell Long-Term AI Safety Lab, the full pipeline cannot be reproduced externally.
+If you wish to understand the workflow, you can review the Colab notebook and accompanying code to see the pipeline stages and structure.
+
+### 1. Installation 
 
 ```bash
 git clone https://github.com/SamuelS0/ProbeEng
 cd ProbeEng
-pip install -e .
+ip install -r requirements.txt
 ```
 
-## Run a Pipeline (Standard)
+### 2. Pipeline Structure Overview
+These commands illustrate the internal experiment flow used in the Cornell LAISR environment.
+They are provided for educational transparency, not for direct execution in this colab. 
 
 ```bash
 # List available presets
@@ -50,59 +56,66 @@ python experiments/run_pipeline.py standard debug
 python experiments/run_pipeline.py standard standard
 ```
 
-## Other workflows 
+### 3. Stage-by-Stage Breakdown (Conceptual Example)
 
 ```bash
-# Ensemble pipeline
-python experiments/run_pipeline.py ensemble comprehensive
+# Activation dataset creation
+python experiments/run_dataset_creation.py demo
 
-# Comparison: probes vs ensemble
-python experiments/run_pipeline.py comparison comprehensive
+# Probe training
+python experiments/run_probe_training.py demo \
+  --activation-dataset path/to/activations.pickle
+
+# Probe evaluation
+python experiments/run_probe_evaluation.py demo \
+  --probes path/to/probes/
 ```
 
-## MVP Preset 
+
+## Illustrative Results 
+
+| Layer | Mean Accuracy | Cross-Dataset Accuracy |
+| :---- | :-----------: | :--------------------: |
+| 17    |      0.80     |          0.76          |
+| 19    |      0.79     |          0.75          |
+| 15    |      0.78     |          0.74          |
+| 13    |      0.77     |          0.73          |
+| 11    |      0.77     |          0.72          |
+
+
+
+## Architecture 
 ```bash
-# experiments/presets/dataset_creation.toml
-[presets.alina_mvp]
-tag = "alina_mvp_dataset"
-llm_ids = ["meta-llama/Llama-2-7b-chat-hf"]
-dataset_collections = ["got"]
-num_tokens_from_end = 1
-device = "cuda"
-layers_start = 1
-layers_end   = 19
-layers_skip  = 2
+┌────────────────┐   ┌────────────────┐   ┌────────────────────┐
+│ Dataset Loader │ → │ Probe Trainer  │ → │ Evaluation & Plots │
+│  (HF datasets) │   │  (sklearn/Py)  │   │  (metrics, graphs) │
+└────────────────┘   └────────────────┘   └────────────────────┘
 
-# experiments/presets/probe_training.toml
-[presets.alina_mvp]
-tag = "alina_mvp_train"
-llm_ids = ["meta-llama/Llama-2-7b-chat-hf"]
-dataset_collections = ["got"]
-probe_methods = ["lr"]        # logistic regression (or "dim", "lda", "pca", "ccs", "lat")
-layers_start = 1
-layers_end   = 19
-layers_skip  = 2
-token_idxs   = [0]            # because num_tokens_from_end=1
-
-# experiments/presets/probe_evaluation.toml
-[presets.alina_mvp]
-tag = "alina_mvp_eval"
-datasets = []                 # evaluate on collection below
-dataset_collections = ["got"]
-eval_splits = ["validation"]
-output_formats = ["csv","json"]
-generate_plots = true
-advanced_plots = true
-calculate_recovered_accuracy = true
-generate_rankings = true
+Each probe acts as a diagnostic classifier over hidden states.
+The meta-probe module (in progress) evaluates these diagnostic probes across layers, datasets, and runs to estimate interpretability reliability.
 ```
 
-### Run
-```bash
-python experiments/run_pipeline.py standard alina_mvp --output-dir ./output/
-```
+## Note on Scope and Reproducibilty 
 
-### Artifacts (Example S3 Layout)
+This public demo reproduces the core architecture and experimental flow of the full ProbeEng framework,
+but omits restricted datasets, configurations, and analysis modules from the
+Long-Term AI Safety Lab at Cornell.
+All results, scripts, and figures are representative,
+intended to demonstrate methodology and structure, not replicate the full internal system. 
+## Acknowledgements & Role 
+
+This repository reflects collaborative work conducted within the Long-Term AI Safety Lab at Cornell.
+ProbeEng is maintained by the lab’s Probe Engineering research team (LAISR).
+
+My role (Alina Shah):
+  - Assisted with cross-layer probe generalization experiments on Llama-2-7B
+  - Supported MVP preset design and documentation for pipeline reproducibility
+  - Helped analyze and visualize probe performance (layer accuracy, transfer gaps, plots)
+  - Contributed to testing and feedback loops for future meta-probe integration
+## Contact
+Alina Miret Shah
+Research Assistant — Long-Term AI Safety Lab, Cornell University
+
 
 
 
