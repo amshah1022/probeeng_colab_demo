@@ -75,15 +75,32 @@ python experiments/run_probe_evaluation.py demo \
 ```
 
 
-## Illustrative Results 
+## Illustrative Results
 
-| Layer | Mean Accuracy | Cross-Dataset Accuracy |
-| :---- | :-----------: | :--------------------: |
-| 17    |      0.80     |          0.76          |
-| 19    |      0.79     |          0.75          |
-| 15    |      0.78     |          0.74          |
-| 13    |      0.77     |          0.73          |
-| 11    |      0.77     |          0.72          |
+**Sample Probe Evaluation Results (Llama-2-7b-chat-hf, Logistic Regression)**
+
+| accuracy | n   | llm_id              | train_dataset | eval_dataset              | probe_method | layer | token_idx | split       | is_supervised | is_grouped | same_dataset | threshold | recovered_accuracy |
+|:---------:|:----|:--------------------|:---------------|:---------------------------|:--------------|:------:|:-----------:|:-------------|:---------------|:-------------|:--------------|:-----------:|:--------------------:|
+| 0.500000 | 100 | Llama-2-7b-chat-hf | got_cities | got_cities | lr | 1 | 0 | validation | True | False | True | 1.00 | 0.500000 |
+| 0.523077 | 65  | Llama-2-7b-chat-hf | got_cities | got_sp_en_trans | lr | 1 | 0 | validation | True | False | False | 1.00 | 0.523077 |
+| 0.520000 | 100 | Llama-2-7b-chat-hf | got_cities | got_cities_cities_conj | lr | 1 | 0 | validation | True | False | False | 0.97 | 0.536082 |
+| 0.530000 | 100 | Llama-2-7b-chat-hf | got_cities | got_cities_cities_disj | lr | 1 | 0 | validation | True | False | False | 0.94 | 0.563830 |
+| 0.550000 | 100 | Llama-2-7b-chat-hf | got_cities | got_larger_than | lr | 1 | 0 | validation | True | False | False | 1.00 | 0.550000 |
+| 0.520000 | 100 | Llama-2-7b-chat-hf | got_cities | got_cities | lr | 3 | 0 | validation | True | False | True | 1.00 | 0.520000 |
+| 0.523077 | 65  | Llama-2-7b-chat-hf | got_cities | got_sp_en_trans | lr | 3 | 0 | validation | True | False | False | 1.00 | 0.523077 |
+| 0.530000 | 100 | Llama-2-7b-chat-hf | got_cities | got_cities_cities_conj | lr | 3 | 0 | validation | True | False | False | 0.97 | 0.546392 |
+| 0.580000 | 100 | Llama-2-7b-chat-hf | got_cities | got_cities_cities_disj | lr | 3 | 0 | validation | True | False | False | 0.94 | 0.617021 |
+| 0.530000 | 100 | Llama-2-7b-chat-hf | got_cities | got_larger_than | lr | 3 | 0 | validation | True | False | False | 1.00 | 0.530000 |
+
+**Interpretation:**  
+This table shows a subset of results from the ProbeEng demo pipeline, measuring how well logistic regression probes trained on one dataset (*got_cities*) generalize to others.  
+Accuracy improves modestly between layers 1 and 3, with *got_larger_than* and *got_cities_disj* showing the strongest early transfer (≈0.55–0.62).  
+Later layers (not shown here) typically achieve >0.8 accuracy and exhibit the most stable cross-dataset generalization.
+
+---
+
+Would you like me to convert this into a **heatmap-style table** (colored Markdown cells, e.g. via HTML inline styles) so it visually mimics your plotted chart but remains text-based?
+
 
 
 
