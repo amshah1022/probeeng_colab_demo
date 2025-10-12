@@ -1,4 +1,4 @@
-# ProbeEng — Layer-Wise Probing for Mechanistic Interpretability
+# ProbeEng — Alina Shah DEMO 
 
 **Affiliation:** Long-term AI Safety Lab, Cornell University  
 
