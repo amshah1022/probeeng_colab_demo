@@ -1,4 +1,4 @@
-# 🔬 ProbeEng — Layer-Wise Probing for Mechanistic Interpretability
+# ProbeEng — Layer-Wise Probing for Mechanistic Interpretability
 
 **Affiliation:** Long-term AI Safety Lab, Cornell University  
 
