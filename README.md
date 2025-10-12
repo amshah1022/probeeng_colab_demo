@@ -2,7 +2,7 @@
 
 **Affiliation:** Long-term AI Safety Lab, Cornell University  
 
-**Lead Developer:** Lionel Levine
+**Project Lead:** Lionel Levine
 
 **Goal:** A scalable pipeline for training and evaluating probes over LLM internal representations (layers, heads, token positions) with reproducible presets and artifact management.
 
