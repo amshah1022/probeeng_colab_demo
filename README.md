@@ -6,9 +6,6 @@
 
 **Goal:** A scalable pipeline for training and evaluating probes over LLM internal representations (layers, heads, token positions) with reproducible presets and artifact management.
 
-> ProbeEng is the **interpretability pillar** of an AI Reliability stack:
-> **Truth Layer** (evidence-grounded verification) ⇄ **ProbeEng** (mechanistic interpretability) ⇄ **Rubric Feedback** (human-feedback calibration).
-
 ---
 
 ## What ProbeEng Does
