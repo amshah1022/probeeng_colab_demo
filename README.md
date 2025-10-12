@@ -1,34 +1,29 @@
-# ProbeEng — Alina Shah DEMO 
+# ProbeEng: Meta-Probing Infrastructure for Reliable Interpretability (Alina Shah DEMO) 
 
+**Role:** Research Assistant — Cornell Long-Term AI Safety Lab
 **Affiliation:** Long-term AI Safety Lab, Cornell University  
-
-**Project Lead:** Lionel Levine
-
-**Goal:** A scalable pipeline for training and evaluating probes over LLM internal representations (layers, heads, token positions) with reproducible presets and artifact management.
+**Keywords:** meta-probing, interpretability infrastructure, AI reliability, evaluation science
 
 ---
 
-## What ProbeEng Does
+## Purpose 
 
-- **Representation extraction** from HuggingFace-compatible LLMs (e.g., Llama-2, GPT-2).  
-- **Probe training** (e.g., LR, DIM, LDA; unsupervised PCA/CCS/LAT) across selected layers and token positions.  
-- **Evaluation** with cross-dataset generalization, rankings, and plots.  
-- **Ensemble support** (e.g., Parallel Projection) for combining methods.  
-- **Artifact I/O** to **S3** for sharing datasets, probes, and evaluation results across runs.
+ProbeEng is a research framework for meta-probing — building, evaluating, and orchestrating probe networks that measure what large language models know and how reliably they express it.
+Instead of interpreting a single model directly, ProbeEng focuses on the infrastructure layer of interpretability:
+Designing standardized probe pipelines to train, test, and ensemble thousands of probes across layers, models, and datasets
+Developing a meta-probe system that learns to evaluate and calibrate other probes’ reliability
+This transforms probing from an ad-hoc interpretability technique into a scientific instrument for reproducible model-understanding research. ProbeEng complements mechanistic interpretability by focusing on the measurement layer—quantifying how well interpretability itself works.
 
 ---
 
-## Pipeline Architecture
+## Core capabilities  
 
-**Pipelines** (pick one):
-- **Standard:** Dataset Creation → Probe Training → Probe Evaluation  
-- **Ensemble:** Dataset Creation → Ensemble Training → Ensemble Evaluation  
-- **Comparison:** Dataset Creation → Probes + Ensemble → Comparison Evaluation
-
-**Stages**:
-1) **Activation Extraction**: forward hooks capture hidden states at chosen layers and tokens → serialized activation dataset (pickle + metadata).  
-2) **Probe / Ensemble Training**: train per-layer probes or a learned ensemble across methods.  
-3) **Evaluation**: compute metrics (accuracy, F1, MI), same-vs-cross dataset generalization, rankings, and plots.
+- End-to-End Pipeline — Dataset creation → Probe training → Evaluation → Visualization
+- Cross-Model Analysis — Train probes on one model (e.g., GPT-2) and test on another (e.g., Llama-2 or Phi-3)
+- Probe Families — Logistic regression, dimensionality, LDA, PCA, CCS, LAT, and ensemble probes
+- Meta-Probe Evaluation (In Development) — Probe-on-probe reliability scoring for interpretability consistency
+- Layer-Wise Generalization Metrics — Identify where features stabilize or transfer between datasets
+- Configurable Presets — .toml-based experiment presets for fast, reproducible workflows
 
 ---
 
