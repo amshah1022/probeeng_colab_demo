@@ -1,7 +1,9 @@
 # ProbeEng: Meta-Probing Infrastructure for Reliable Interpretability (Alina Shah DEMO) 
 
 **Role:** Research Assistant — Cornell Long-Term AI Safety Lab
+
 **Affiliation:** Long-term AI Safety Lab, Cornell University  
+
 **Keywords:** meta-probing, interpretability infrastructure, AI reliability, evaluation science
 
 ---
