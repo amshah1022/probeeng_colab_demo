@@ -87,7 +87,7 @@ python experiments/run_probe_evaluation.py demo \
 ## Architecture 
 ```bash
 ┌────────────────┐   ┌────────────────┐   ┌────────────────────┐
-│ Dataset Loader │ → │ Probe Trainer  │ → │ Evaluation & Plots │
+│ Dataset Loader │ → │ Probe Trainer  │ → │ Evaluation + Plots │
 │  (HF datasets) │   │  (sklearn/Py)  │   │  (metrics, graphs) │
 └────────────────┘   └────────────────┘   └────────────────────┘
 
