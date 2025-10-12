@@ -132,6 +132,8 @@ My role (Alina Shah):
 ## Contact
 Alina Miret Shah
 Research Assistant — Long-Term AI Safety Lab, Cornell University
+alina.shah1022@gmail.com  
+[alina.miret](https://www.linkedin.com/in/alinamshah/)
 
 
 
