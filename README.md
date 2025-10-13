@@ -25,7 +25,7 @@ This README is a demonstration version for public understanding and educational 
 
 ## Note on Scope and Reproducibilty 
 
-This public demo reproduces the core architecture and experimental flow of the full ProbeEng framework,
+This public demo reproduces the architecture and experimental flow of the ProbeEng framework,
 but omits restricted datasets, configurations, and analysis modules from the
 Long-Term AI Safety Lab at Cornell.
 All results, scripts, and figures are representative,
