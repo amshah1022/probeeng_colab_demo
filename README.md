@@ -1,5 +1,5 @@
 # ProbeEng: Meta-Probing Infrastructure for Reliable Interpretability (DEMO) 
-*This demo README was prepared by Alina Shah to illustrate the structure and methodology of the ProbeEng framework developed at the Cornell Long-Term AI Safety Lab (LAISR). It omits all restricted datasets, configurations, and internal analysis modules. Results shown are illustrative, not official lab outputs.*
+*This demo README was prepared by Alina Shah to illustrate the structure and methodology of her contribution to the ProbeEng framework developed at the Cornell Long-Term AI Safety Lab (LAISR). It omits all restricted datasets, configurations, and internal analysis modules. Results shown are illustrative, not official lab outputs.*
 
 
 **Role:** Research Assistant — Cornell Long-Term AI Safety Lab
