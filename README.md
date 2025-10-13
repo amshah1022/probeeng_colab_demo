@@ -22,6 +22,7 @@ This transforms probing from an ad-hoc interpretability technique into a scienti
 This README is a demonstration version for public understanding and educational reference. It does not include private data or full internal configurations.
 
 ---
+
 ## Note on Scope and Reproducibilty 
 
 This public demo reproduces the core architecture and experimental flow of the full ProbeEng framework,
@@ -29,6 +30,8 @@ but omits restricted datasets, configurations, and analysis modules from the
 Long-Term AI Safety Lab at Cornell.
 All results, scripts, and figures are representative,
 intended to demonstrate methodology and structure, not replicate the full internal system. 
+
+---
 
 ## Acknowledgements & Role 
 
@@ -41,6 +44,7 @@ My role (Alina Shah):
   - Helped analyze and visualize probe performance (layer accuracy, transfer gaps, plots)
   - Contributed to testing and feedback loops for future meta-probe integration
 
+---
 
 ## Core capabilities  
 
@@ -51,7 +55,7 @@ My role (Alina Shah):
 - Layer-Wise Generalization Metrics — Identify where features stabilize or transfer between datasets
 - Configurable Presets — .toml-based experiment presets for fast, reproducible workflows
 
-
+---
 
 ## Quick Start (Read-Only Demonstration) 
 
@@ -97,7 +101,7 @@ python experiments/run_probe_evaluation.py demo \
   --probes path/to/probes/
 ```
 
-
+---
 ## Illustrative Results
 
 **Sample Probe Evaluation Results (Llama-2-7b-chat-hf, Logistic Regression)**
@@ -135,7 +139,7 @@ Later layers (not shown here) typically achieve >0.8 accuracy and exhibit the mo
 Each probe acts as a diagnostic classifier over hidden states.
 The meta-probe module (in progress) evaluates these diagnostic probes across layers, datasets, and runs to estimate interpretability reliability.
 
-
+---
 
 ## Contact
 
