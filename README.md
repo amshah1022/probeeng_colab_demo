@@ -19,7 +19,28 @@ Instead of interpreting a single model directly, ProbeEng focuses on the infrast
 
 This transforms probing from an ad-hoc interpretability technique into a scientific instrument for reproducible model-understanding research. ProbeEng complements mechanistic interpretability by focusing on the measurement layer—quantifying how well interpretability itself works.
 
+This README is a demonstration version for public understanding and educational reference. It does not include private data or full internal configurations.
+
 ---
+## Note on Scope and Reproducibilty 
+
+This public demo reproduces the core architecture and experimental flow of the full ProbeEng framework,
+but omits restricted datasets, configurations, and analysis modules from the
+Long-Term AI Safety Lab at Cornell.
+All results, scripts, and figures are representative,
+intended to demonstrate methodology and structure, not replicate the full internal system. 
+
+## Acknowledgements & Role 
+
+This repository reflects collaborative work conducted within the Long-Term AI Safety Lab at Cornell.
+ProbeEng is maintained by the lab’s Probe Engineering research team (LAISR). My contributions were under the supervision of the Probe Engineering team, as part of the LAISR interpretability group.
+
+My role (Alina Shah):
+  - Assisted with cross-layer probe generalization experiments on Llama-2-7B
+  - Supported MVP preset design and documentation for pipeline reproducibility
+  - Helped analyze and visualize probe performance (layer accuracy, transfer gaps, plots)
+  - Contributed to testing and feedback loops for future meta-probe integration
+
 
 ## Core capabilities  
 
@@ -30,7 +51,7 @@ This transforms probing from an ad-hoc interpretability technique into a scienti
 - Layer-Wise Generalization Metrics — Identify where features stabilize or transfer between datasets
 - Configurable Presets — .toml-based experiment presets for fast, reproducible workflows
 
----
+
 
 ## Quick Start (Read-Only Demonstration) 
 
@@ -114,24 +135,10 @@ Later layers (not shown here) typically achieve >0.8 accuracy and exhibit the mo
 Each probe acts as a diagnostic classifier over hidden states.
 The meta-probe module (in progress) evaluates these diagnostic probes across layers, datasets, and runs to estimate interpretability reliability.
 
-## Note on Scope and Reproducibilty 
 
-This public demo reproduces the core architecture and experimental flow of the full ProbeEng framework,
-but omits restricted datasets, configurations, and analysis modules from the
-Long-Term AI Safety Lab at Cornell.
-All results, scripts, and figures are representative,
-intended to demonstrate methodology and structure, not replicate the full internal system. 
-## Acknowledgements & Role 
 
-This repository reflects collaborative work conducted within the Long-Term AI Safety Lab at Cornell.
-ProbeEng is maintained by the lab’s Probe Engineering research team (LAISR).
-
-My role (Alina Shah):
-  - Assisted with cross-layer probe generalization experiments on Llama-2-7B
-  - Supported MVP preset design and documentation for pipeline reproducibility
-  - Helped analyze and visualize probe performance (layer accuracy, transfer gaps, plots)
-  - Contributed to testing and feedback loops for future meta-probe integration
 ## Contact
+
 Alina Miret Shah
 Research Assistant — Long-Term AI Safety Lab, Cornell University
 
