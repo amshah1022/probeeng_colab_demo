@@ -12,7 +12,7 @@
 
 ## Purpose 
 
-ProbeEng is a research framework for meta-probing, building, evaluating, and orchestrating probe networks that measure what large language models know and how reliably they express it.
+ProbeEng is a research framework developed within the Cornell Long-Term AI Safety Lab for meta-probing, building, evaluating, and orchestrating probe networks that measure what large language models know and how reliably they express it.
 Instead of interpreting a single model directly, ProbeEng focuses on the infrastructure layer of interpretability:
 - Designing standardized probe pipelines to train, test, and ensemble thousands of probes across layers, models, and datasets
 - Developing a meta-probe system that learns to evaluate and calibrate other probes’ reliability
