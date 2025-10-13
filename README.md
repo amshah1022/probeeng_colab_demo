@@ -31,7 +31,6 @@ Long-Term AI Safety Lab at Cornell.
 All results, scripts, and figures are representative,
 intended to demonstrate methodology and structure, not replicate the full internal system. 
 
----
 
 ## Acknowledgements & Role 
 
