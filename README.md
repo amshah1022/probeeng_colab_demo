@@ -43,6 +43,8 @@ My role (Alina Shah):
   - Helped analyze and visualize probe performance (layer accuracy, transfer gaps, plots)
   - Contributed to testing and feedback loops for future meta-probe integration
 
+> **Citation:** LAISR (2025). *Probe Engineering*. Cornell Long-Term AI Safety Lab. 
+
 ---
 
 ## Core capabilities  
